@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../Images/bg-hp.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@font-face {
+  font-family: Chalkboy Regular;
+  src: url(../Font/chalkboy-font/ChalkboyRegular-vmXe7.otf);
+}
+
+nav {
+  font-family: "Alfa Slab One", cursive;
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/*Pag Principal*/
+#logo {
+  position: static;
+  top: 5%;
+  right: 5%;
+  width: 600px;
+}
+
+.cont,
+.contContactos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: fit-content;
+  margin-right: 0;
+  margin-left: 50%;
+  margin-top: 3%;
+  padding-top: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.title {
+  color: white;
+  font-family: Chalkboy Regular;
+  font-size: 4rem;
+  text-align: end;
+}
+
+p,
+h2 {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+#btn-tele {
+  border: none;
+  border-radius: 5px;
+  width: 170px;
+  background-color: rgb(255, 208, 0);
+  color: rgb(58, 58, 58);
+  font-family: "Alfa Slab One", cursive;
+  font-size: 1.5rem;
+}
+
+#btn-tele:hover {
+  animation: tada;
+  animation-duration: 1s;
+}
+
+#social-icons {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.fab,
+.fa {
+  color: white;
+}
+
+.fab:hover {
+  animation: jello;
+  animation-duration: 1s;
+}
+
+/*Pag Sobre Nós*/
+.imgPizzaria {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+}
+
+.img-cont {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 5px solid white;
+}
+
+.img-cont img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-out;
+}
+
+/*Pag Menu*/
+#menu {
+  background: linear-gradient(to right bottom,
+      rgba(15, 14, 14, 0.8),
+      rgba(75, 68, 68, 0.3));
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#tele {
+  background: linear-gradient(to right bottom,
+      rgba(15, 14, 14, 0.8),
+      rgba(75, 68, 68, 0.3));
+  backdrop-filter: blur(20px);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.img-container {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 5px solid white;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-out;
+}
+
+.img-container img:hover {
+  transform: scale(1.2);
+}
+
+.full-img {
+  position: absolute;
+  height: 95%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.25s ease-out;
+}
+
+.full-img.open {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-gallery {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease-out;
+}
+
+.modal-gallery.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: fit-content;
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  font-size: 0.5rem;
+}
+
+@media (max-width: 840px) {
+  body {
+    background-image: url(../Images/responsive/bg-hp.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  main {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .cont,
+  .contContactos {
+    display: block;
+    margin-inline: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4rem;
+  }
+
+  #logo {
+    width: 100%;
+    height: auto;
+  }
+
+  .title {
+    color: white;
+    font-family: Chalkboy Regular;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  #social-icons {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .full-img {
+    position: absolute;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.25s ease-out;
+  }
+
+  #map {
+    width: 80%;
+    height: auto;
+  }
+}
