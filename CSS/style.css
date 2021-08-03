@@ -10,6 +10,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: white;
 }
 
 @font-face {
@@ -59,9 +61,16 @@ nav {
 }
 
 p,
-h2 {
+h2, 
+#contasUser,
+.fab,
+.fa{
   color: white;
-  font-family: 'Poppins', sans-serif;
+}
+
+.modal-body,
+#staticBackdropLabel {
+  color: black;
 }
 
 #btn-tele {
@@ -83,11 +92,6 @@ h2 {
   display: flex;
   width: 20%;
   justify-content: space-between;
-}
-
-.fab,
-.fa {
-  color: white;
 }
 
 .fab:hover {
@@ -138,7 +142,7 @@ h2 {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 3fr);
   grid-gap: 2rem;
 }
 
