@@ -23,6 +23,10 @@ if(isset($_GET['p'])){ //GET = metodo de uma super global do php
         include('content/pages/minhaConta.php');
     else if($p == 'editar')
         include('content/pages/editarUtilizador.php');
+    else if($p == 'backOffice')
+        include('content/pages/BackOffice/backOffice.php');
+    else if($p == 'addProduto')
+        include('content/pages/BackOffice/addProduto.php');
     else
         include('content/pages/404.php');
 }else{
