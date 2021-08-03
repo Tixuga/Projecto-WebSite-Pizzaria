@@ -9,14 +9,23 @@ $result = $conn->query($sql);
  
 if ($result->num_rows > 0) {
   $row = $result->fetch_assoc();
- 
-  /*Utilizador existente */
+ if ($row['id_tipo_utilizador'] == 1) { 
+    /*Utilizador admin existente */
+    session_start();
+    $_SESSION['id'] = $row['id_utilizador'];
+    $_SESSION['email'] = $row['email'];
+    $_SESSION['first'] = $row['firstname'];
+    
+    header('Location: ../index.php?p=backOffice');
+ } else {
+    /*Utilizador existente */
     session_start();
     $_SESSION['id'] = $row['id_utilizador'];
     $_SESSION['email'] = $row['email'];
     $_SESSION['first'] = $row['firstname'];
     
     header('Location: ../index.php?p=minhaConta');
+ }
  
 } else {
  
