@@ -6,7 +6,6 @@ if (!isset($_SESSION['id'])) {
 } else {
     $id = $_SESSION['id'];
     $email = $_SESSION['email'];
-    $first = $_SESSION['first'];
     ?>
 <div class="cont">
     <h1 class="title">NOVO PRODUTO</h1>
@@ -21,23 +20,24 @@ if (!isset($_SESSION['id'])) {
             <label for="description" class="form-description">Descrição</label>
             <textarea class="form-control" id="form-description" name="form-description" rows="3"></textarea>
         </div>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" id="form-categoria" name="form-categoria" aria-label="Default select example">
                 <option selected>Categoria</option>
-                <option value="form-categoria">Pão de Alho</option>
-                <option value="form-categoria">Saladas</option>
-                <option value="form-categoria">Massas</option>
-                <option value="form-categoria">Lasanhas</option>
-                <option value="form-categoria">Kebab</option>
-                <option value="form-categoria">Calzones</option>
-                <option value="form-categoria">Pizzas</option>
+                <option value="1">Pão de Alho</option>
+                <option value="2">Saladas</option>
+                <option value="3">Massas</option>
+                <option value="4">Lasanhas</option>
+                <option value="5">Kebab</option>
+                <option value="6">Calzones</option>
+                <option value="7">Pizzas</option>
             </select>   
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example" name="form-tamanho">
         <option selected>Tamanho</option>
-        <option value="form-tamanho">Não aplicavél</option>
-        <option value="form-tamanho">Mini</option>
-        <option value="form-tamanho">Pequeno</option>
-        <option value="form-tamanho">Médio</option>
-        <option value="form-tamanho">Familiar</option>
+        <option value="não aplicável">Não aplicável</option>
+        <option value="não aplicável">2 unidades</option>
+        <option value="mini">Mini</option>
+        <option value="pequeno">Pequeno</option>
+        <option value="médio">Médio</option>
+        <option value="familiar">Familiar</option>
         </select>
         <div class="mb-3">
             <label for="form-preço" class="form-label">Preço</label>
@@ -45,6 +45,8 @@ if (!isset($_SESSION['id'])) {
         </div>
         <button type="submit" formaction="dbProdutos/insertProduto.php" class="btn btn-primary">Adicionar</button>
     </form>
+    <a href="backoffice.php?p=backOffice"><button type="button"
+          class="btn btn-warning">Voltar</button></a>
 </div>
 <?php
 }

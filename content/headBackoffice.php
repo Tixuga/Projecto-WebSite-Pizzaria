@@ -20,7 +20,7 @@
   <!--ICONS-->
   <link href="Images/fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
   <!--CSS-->
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/styleBackoffice.css">
   <!--FAVICON-->
   <link rel="shortcut icon" href="Images/favicon-pizza1.svg" type="image/x-icon">
   <title>Pizzaria Sabor Tropical</title>

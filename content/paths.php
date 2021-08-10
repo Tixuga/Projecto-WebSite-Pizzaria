@@ -27,6 +27,10 @@ if(isset($_GET['p'])){ //GET = metodo de uma super global do php
         include('content/pages/BackOffice/backOffice.php');
     else if($p == 'addProduto')
         include('content/pages/BackOffice/addProduto.php');
+    else if($p == 'editarProduto')
+        include('content/pages/BackOffice/editarProduto.php');
+    else if($p == 'listaProduto')
+        include('content/pages/BackOffice/listaProduto.php');
     else
         include('content/pages/404.php');
 }else{

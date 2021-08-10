@@ -1,18 +1,22 @@
 <?php
 session_start();
-include('dbProdutos/db.php'); //mudar
+include('db.php'); //mudar
 
-$email=$_POST['form-email'];
-$pwd=$_POST['form-password'];
-$id = $_SESSION['id'];
 
-$sql = "UPDATE utilizador SET email='$email', password='$pwd' WHERE id_utilizador=$id";
+$name = $_POST['form-name'];
+$description = $_POST['form-description'];
+$categoria = $_POST['form-categoria'];
+$tamanho = $_POST['form-tamanho'];
+$preço = $_POST['form-preço'];
+
+
+$sql = "UPDATE `produtos` SET `name`='$name',`description`='$description',`id_categorias`='$categoria',`tamanho`='$tamanho',`preco`='$preço'";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Conta editada com sucesso, a ser redirecionado.";
+  echo "Produto editado com sucesso, a ser redirecionado.";
   header('refresh:2;url=../index.php?p=home');
 } else {
-  echo "Erro. Conta não editada, a ser redirecionado.";
+  echo "Erro. Produto não editado, a ser redirecionado.";
   header('refresh:2;url=../index.php?p=minhaConta');
 }
 

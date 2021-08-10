@@ -15,8 +15,9 @@ if ($conn->query($sql) === TRUE) {
   header('refresh:2;url=../index.php?p=login');
 } else {
   echo "Erro. Utilizador não registado, a ser redirecionado.";
-  header('refresh:2;url=../index.php?p=registar');
-}
+  echo "Error: " . $sql . "<br>" . $conn->error;
+/*   header('refresh:2;url=../index.php?p=registar');
+ */}
 
 $conn->close();
 ?>

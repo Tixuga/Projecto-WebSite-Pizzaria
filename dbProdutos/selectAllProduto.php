@@ -1,44 +1,56 @@
 <?php
-include('dbProdutos/db.php'); //mudar
+session_start();
+include('db.php');
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM produtos";
 $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
-?>
 
-<div id="listaProdutos" class="container">
-    <div class="row">
-        <div class="col"></div>
-        <div class="col">ID</div>
-        <div class="col">NOME</div>
-        <div class="col">DESCRIÇÃO</div>
-        <div class="col">CATEGORIA</div>
-        <div class="col">TAMANHO</div>
-        <div class="col">PREÇO</div>
-    </div>
-
+ 
+?> 
+<div class="cont">
+    <h1 class="title">LISTA PRODUTOS</h1>
+<a href="backoffice.php?p=backOffice"><button type="button" class="btn btn-warning">Voltar</button></a>
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOME</th>
+          <th scope="col">DESCRIÇÃO</th>
+          <th scope="col">CATEGORIA</th>
+          <th scope="col">TAMANHO</th>
+          <th scope="col">PREÇO</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead> 
+      <tbody>
+        
 <?php
-
+if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    ?>
-    <form action="content/pages/editarUtilizador.php?id=<?=$row['id'];?>" method="post">
-      <div class="row mt-2">
-        <div class="col">
-          <button type="submit">Selecionar</button>
-      </div>
-        <div class="col"><?=$row['id'];?></div>
-        <div class="col"><?=$row['email'];?></div>
-        <div class="col"><?=$row['password'];?></div>
+        ?>
+        <form method="post">
+        <tr>
+            <th scope="row"><?= $row['id_produtos']; ?></th>
+            <td><?= $row['name'] ?></td>
+            <td><?= $row['description'] ?></td>
+            <td><?= $row['id_categorias'] ?></td>
+            <td><?= $row['tamanho'] ?></td>
+            <td><?= $row['preco'] ?></td>
+            <td><a href="dbProdutos/selectProduto.php?id=<?php echo $row['id_produtos']; ?>">Editar</a></td>
+            <td><a href="content/pages/BackOffice/aproveDelete.php?id=<?php echo $row['id_produtos']; ?>">Apagar</a></td>
+          </tr>
         </form>
-    </div>
-
-    <?php
-  }
-  echo"</div>";
+ <?php }
+  ?></tbody>
+  </table> 
+  </div>
+  <?php
 } else {
   echo "0 results";
 }
 $conn->close();
+}
 ?>

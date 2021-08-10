@@ -1,11 +1,11 @@
 <?php
 session_start();
-include('dbProdutos/db.php'); //mudar
+include('db.php'); //mudar
 
 $id = $_SESSION['id'];
-
+$id_produto = $row['id_produtos'];
 // sql to delete a record
-$sql = "DELETE FROM utilizador WHERE id_utilizador=$id";
+$sql = "DELETE FROM produtos WHERE id_produtos = $id_produto";
 
 if ($conn->query($sql) === TRUE) {
   echo "Conta eliminada com sucesso, a ser redirecionado.";
