@@ -1,3 +1,4 @@
+
 <?php
 //isset - verifica se o 'p' existe nos urls
 if(isset($_GET['p'])){ //GET = metodo de uma super global do php
@@ -36,5 +37,4 @@ if(isset($_GET['p'])){ //GET = metodo de uma super global do php
 }else{
     include('content/pages/home.php');
 }
-
 ?>
