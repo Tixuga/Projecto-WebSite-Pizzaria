@@ -8,5 +8,5 @@ CREATE TABLE utilizador(
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL,
     email VARCHAR(50) UNIQUE,
-    contact INT(9) UNIQUE
+    contact INT(9) NOT NULL
 );

@@ -12,11 +12,12 @@ if ($result->num_rows > 0) {
  if ($row['id_tipo_utilizador'] == 1) { 
     /*Utilizador admin existente */
     session_start();
+    $_SESSION['tipoUser'] = $row['id_tipo_utilizador'];
     $_SESSION['id'] = $row['id_utilizador'];
     $_SESSION['email'] = $row['email'];
     $_SESSION['first'] = $row['firstname'];
     
-    header('Location: ../index.php?p=backOffice');
+    header('Location: ../backoffice.php?p=backOffice');
  } else {
     /*Utilizador existente */
     session_start();
