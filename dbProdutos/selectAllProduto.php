@@ -5,7 +5,6 @@ include('db.php');
 $sql = "SELECT * FROM produtos";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-
  
 ?> 
 <div class="cont">
@@ -31,16 +30,16 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
         ?>
-        <form method="post">
-        <tr>
-            <th scope="row"><?= $row['id_produtos']; ?></th>
+        <form action="backoffice.php?p=editarProduto" method="post">
+          <tr>
+            <th scope="row"><input type="text" name="idProduto" value="<?=$row['id_produtos']; ?>"hidden><?=$row['id_produtos']; ?></th>
             <td><?= $row['name'] ?></td>
             <td><?= $row['description'] ?></td>
             <td><?= $row['id_categorias'] ?></td>
             <td><?= $row['tamanho'] ?></td>
             <td><?= $row['preco'] ?></td>
-            <td><a href="dbProdutos/selectProduto.php?id=<?php echo $row['id_produtos']; ?>">Editar</a></td>
-            <td><a href="content/pages/BackOffice/aproveDelete.php?id=<?php echo $row['id_produtos']; ?>">Apagar</a></td>
+            <td><input type="submit" name="edit" value="Editar"></td>
+            <!-- <td><a href="content/pages/BackOffice/aproveDelete.php?id=<?php echo $row['id_produtos']; ?>">Apagar</a></td> -->
           </tr>
         </form>
  <?php }
@@ -54,3 +53,5 @@ if ($result->num_rows > 0) {
 $conn->close();
 }
 ?>
+
+

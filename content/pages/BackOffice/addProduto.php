@@ -33,7 +33,7 @@ if (!isset($_SESSION['id'])) {
         <select class="form-select" aria-label="Default select example" name="form-tamanho">
         <option selected>Tamanho</option>
         <option value="não aplicável">Não aplicável</option>
-        <option value="não aplicável">2 unidades</option>
+        <option value="2 unidades">2 unidades</option>
         <option value="mini">Mini</option>
         <option value="pequeno">Pequeno</option>
         <option value="médio">Médio</option>
