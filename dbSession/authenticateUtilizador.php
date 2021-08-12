@@ -21,11 +21,12 @@ if ($result->num_rows > 0) {
  } else {
     /*Utilizador existente */
     session_start();
+    $_SESSION['tipoUser'] = $row['id_tipo_utilizador'];
     $_SESSION['id'] = $row['id_utilizador'];
     $_SESSION['email'] = $row['email'];
     $_SESSION['first'] = $row['firstname'];
     
-    header('Location: ../index.php?p=minhaConta');
+    header('Location: ../index.php?p=home');
  }
  
 } else {

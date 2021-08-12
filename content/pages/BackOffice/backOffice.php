@@ -1,11 +1,9 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['id'])) {
+ if (!isset($_SESSION['id'])) {
     header('Location: ../../index.php?p=login');
-} else {
-    $id = $_SESSION['id'];
-    $email = $_SESSION['email'];
+} else if ($_SESSION['tipoUser'] == 1){
     $first = $_SESSION['first'];
     ?>
 <div class="cont">
@@ -16,5 +14,9 @@ if (!isset($_SESSION['id'])) {
     <a href="backoffice.php?p=addProduto"><button type="submit" class="btn btn-warning">Add Produto</button></a>
 </div>
 <?php
+} else {
+    echo "Acesso negado";
+    header('refresh:3;url=index.php?p=home');
+
 }
 ?>

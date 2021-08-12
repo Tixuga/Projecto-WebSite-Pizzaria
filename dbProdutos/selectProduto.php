@@ -2,7 +2,7 @@
 include('db.php'); //mudar
 
 $id = $_SESSION['id'];
-$idProduto = $row['id_produtos'];
+$idProduto = $_GET['id_produtos'];
 
 $sql = "SELECT * FROM produtos WHERE id_produtos = $idProduto";
 $result = $conn->query($sql);
