@@ -12,6 +12,7 @@ session_start();
     <p>O que pretende fazer?</p>
     <a href="backoffice.php?p=listaProduto"><button type="submit" class="btn btn-warning">Lista de Produtos</button></a>
     <a href="backoffice.php?p=addProduto"><button type="submit" class="btn btn-warning">Add Produto</button></a>
+    <a href="backoffice.php?p=listaUtilizador"><button type="submit" class="btn btn-warning">Lista de Utilizadores</button></a>
 </div>
 <?php
 } else {

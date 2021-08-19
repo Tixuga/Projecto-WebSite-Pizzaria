@@ -8,33 +8,38 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 ?>
 
-  <div id="contasUser" class="container">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col">ID</div>
-      <div class="col">Email</div>
-      <div class="col">Password</div>
-    </div>
+<div class="cont">
+    <h1 class="title">LISTA UTILIZADORES</h1>
+<a href="backoffice.php?p=backOffice"><button type="button" class="btn btn-warning">Voltar</button></a>
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOME</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">CONTACTO</th>
+          <th scope="col">ENCOMENDAS</th>
+        </tr>
+      </thead> 
+      <tbody>
 
     <?php
 
     // output data of each row
     while ($row = $result->fetch_assoc()) {
     ?>
-      <form action="content/pages/editarUtilizador.php?id=<?= $row['id']; ?>" method="post">
-        <div class="row mt-2">
-          <div class="col">
-            <button type="submit">Selecionar</button>
-          </div>
-          <div class="col"><?= $row['id']; ?></div>
-          <div class="col"><?= $row['email']; ?></div>
-          <div class="col"><?= $row['password']; ?></div>
-        </div>
-      </form>
-
-
+          <tr>
+            <th scope="row"><input type="text" name="id" value="<?=$row['id_utilizador']; ?>"hidden><?=$row['id_utilizador']; ?></th>
+            <td><?= $row['firstname']." ". $row['lastname'] ?></td>
+            <td><?= $row['email'] ?></td>
+            <td><?= $row['contact'] ?></td>
+            <td><input type="submit" name="historico" value="Ver Historico"></td>
+          </tr>        
+ <?php }
+  ?></tbody>
+  </table> 
+  </div>
   <?php
-    }
   } else {
     echo "0 results";
   }
